@@ -14,6 +14,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Почта', blank=False, unique=True)
     password = models.CharField(max_length=254, verbose_name='Пароль', blank=False)
     avatar = models.ImageField(verbose_name='Аватар', upload_to='photo', blank=True)
+    personal_data = models.BooleanField(default=False,blank=False)
 
     def __str__(self):
         return f"{self.name} {self.surname}"
